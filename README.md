@@ -117,6 +117,29 @@ const CustomComponent = (function(_super) {})(Component);
 module.exports.CustomComponent = lazyDependentComponent('ResultList')(CustomComponent);
 ```
 
+## Utilities
+
+### `swapVar`
+
+Merges the Coveo namespace with the namespace of the component so that exported components can be instantiated from the `Coveo` global object. Declare it after your exports at the root `index` file.
+
+**To use:**
+
+Typescript:
+
+```javascript
+import { swapVar } from '@coveopos/turbo-core'
+
+swapVar(this)
+
+Vanilla Javascript:
+
+```javascript
+const swapVar = require('@coveopos/turbo-core').swapVar;
+
+swapVar(module.exports);
+```
+
 ## Contribute
 
 1. Clone the project
