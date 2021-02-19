@@ -1,6 +1,6 @@
 {
     "name": "@coveops/turbo-core",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "A utility library for turbo-charged component development",
     "main": "dist/index.js",
     "scripts": {
