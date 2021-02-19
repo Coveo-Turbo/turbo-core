@@ -117,6 +117,38 @@ const CustomComponent = (function(_super) {})(Component);
 module.exports.CustomComponent = lazyDependentComponent('ResultList')(CustomComponent);
 ```
 
+#### `requires-fields`
+
+The `requires-fields` decorator passes a list of fields declared in the platform to the search request:
+
+```javascript
+class CustomComponent extends Component {}
+Initialization.registerAutoCreateComponent(CustomComponent);
+Initialization.registerComponentFields(CustomComponent.ID, ['field1', 'field2']);
+```
+
+**To use:**
+
+Typescript:
+
+```javascript
+import { requiresFields } from '@coveopos/turbo-core'
+
+@component()
+@requiresFields('field1', 'field2')
+export class CustomComponent extends Component {}
+```
+
+Vanilla Javascript:
+
+```javascript
+const component = require('@coveopos/turbo-core').component;
+const requiresFields = require('@coveopos/turbo-core').requiresFields;
+
+const CustomComponent = (function(_super) {})(Component);
+module.exports.CustomComponent = requiresFields('field1', 'field2')(component(CustomComponent));
+```
+
 ## Utilities
 
 ### `swapVar`
